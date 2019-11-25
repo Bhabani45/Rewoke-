@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container">
+
+    <form class="form1" action="/update/{{customer.id}}" method="POST">
+        {{form|crispy}}
+    
+        {% csrf_token %}
+        <h4> Customer Update Details</h4>
+
+        <div class="form-group">
+            <div><input type="text" class="form-control"  placeholder = "Employee Name" value ="{{customer.name}}"></div>
+        </div>
+
+        <div class="form-group">
+            <div><input type="text" class="form-control"  placeholder = " password" value ="{{customer.password}}"></div>
+        </div>
+
+        <div class="form-group">
+            <div><input type="text" class="form-control"  placeholder = "Confirm password" value ="{{customer.Confirmpassword}}"></div>
+        </div>
+
+        <div class="form-group">
+            <div><input type="text" class="form-control"  placeholder ="Email Id"value ="{{customer.Emailid}}"></div>
+        </div>
+
+
+        <button class="submit" align="center"><i class="fa fa-database" aria-hidden="true"></i>
+            Update</button>
+
+</div>
+
+
+</form>
+
+
+
+</div>
+{% endblock %}
